@@ -1,0 +1,15 @@
+@import '../../variables';
+main{
+    width: 360px;
+    height: fit-content;
+    border-radius: 12px;
+    background-color: $lightColor;
+    padding: 16px 0;
+    .head-title{
+        width: 80%;
+        margin: auto;
+        color: $darkColor;
+        h1{font-weight: 600;font-size: 24px;}
+        p{font-weight: 400;font-size: 12px;}
+    }
+}

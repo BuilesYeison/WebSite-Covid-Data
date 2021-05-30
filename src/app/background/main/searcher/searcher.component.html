@@ -1,0 +1,7 @@
+<div class="searcher">
+  <form #searcher="ngForm" [formGroup]="searchForm">
+    <label for="search-box"><i class='bx bx-search'></i></label>
+    <input formControlName="searchBox" (keyup)="validate(searcher.invalid)" name="search-box" class="search-box" type="text">
+    <span class="error" *ngIf="f.searchBox.errors?.pattern">El formato no es correcto</span>
+  </form>
+</div>

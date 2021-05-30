@@ -1,0 +1,17 @@
+@import '../variables';
+
+.background{
+    background-color: $backgroundColor;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        position: absolute;
+        z-index: 0;
+    }
+    app-main{
+        z-index: 1;
+    }
+}
