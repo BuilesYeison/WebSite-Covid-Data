@@ -5,11 +5,13 @@
   form{
     width: 100%;
     position: relative;
+
     label{
       position: absolute;
       top: 10px;
       left:10px;
       cursor: pointer;
+      z-index: 3;
       i{
         font-size: 24px;
         color: $searchBoxIconColor;
@@ -17,7 +19,8 @@
       }
     }
     .search-box{
-      left: 5px;
+      position: relative;
+      z-index: 2;
       width: 100%;
       background-color: $searchBoxBgColor;
       font-size: 18px;
@@ -31,6 +34,36 @@
       top: 30px;
       font-size: 12px;
       color: rgb(201, 55, 55);
+    }
+    .menu{
+      position: absolute;
+      z-index: 1;
+      top:20px;
+      width: 100%;
+      height: fit-content;
+      max-height: 150px;
+      background-color: $searchBoxBgColor;
+      padding-top: 25px;
+      border-radius: 0 0 24px 24px;
+      overflow: scroll;
+      &::-webkit-scrollbar{//scroll personalizado
+        width: 8px;
+        height: 8px;
+      }
+      &::-webkit-scrollbar-thumb{
+        background-color: $summaryGlobalTextColor;
+        border-radius: 24px;
+      }
+      .card{
+        z-index: 0;
+        width: 100%;
+        text-align: center;
+        color: $summaryGlobalTextColor;
+        padding: 5px 0;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover{background-color: $menuItemColor;}
+      }
     }
   }
 }

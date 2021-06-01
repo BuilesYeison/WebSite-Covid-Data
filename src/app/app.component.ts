@@ -11,9 +11,6 @@ export class AppComponent {
   covidData:any =[]
   constructor(private getApiData:GetApiDataService){}
   ngOnInit():void{
-    this.getApiData.getSummary().subscribe(data=>{
-      this.covidData = data;
-      console.log(data)
-    });
+
   }
 }

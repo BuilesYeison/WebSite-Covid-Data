@@ -7,7 +7,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     img{
+      width: max-content;
         position: absolute;
         z-index: 0;
     }

@@ -1,7 +1,11 @@
 <div class="searcher">
   <form #searcher="ngForm" [formGroup]="searchForm">
     <label for="search-box"><i class='bx bx-search'></i></label>
-    <input formControlName="searchBox" (keyup)="validate(searcher.invalid)" name="search-box" class="search-box" type="text">
+    <input formControlName="searchBox" autocomplete="off" (keyup)="validate(searcher.invalid)" name="search-box" class="search-box" type="text">
     <span class="error" *ngIf="f.searchBox.errors?.pattern">El formato no es correcto</span>
+    <div class="menu" *ngIf="!searcher.invalid && searchResult.length >=3">
+      <div class="card" (click)="cardOnClick()" *ngFor="let item of value"><p>{{item.Country}}</p></div>
+    </div>
   </form>
 </div>
+<!--*ngIf="!searcher.invalid && searchResult.length >=3"-->
