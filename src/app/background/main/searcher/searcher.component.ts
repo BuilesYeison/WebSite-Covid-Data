@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import {FormControl,FormGroup,Validators} from '@angular/forms'
 
 @Component({
@@ -12,24 +12,28 @@ export class SearcherComponent implements OnInit {
   });
   searchResult:string = "";
   @Input() countries:any; // get data from main component
-  filteredCountries:string[] = [];
-  value:any = "";
+  @Output() countrySelected:EventEmitter<any> = new EventEmitter();
+  filteredCountries:any = "";
+  inputValue:string="";
   constructor() { }
   validate(state:boolean){ //the pattern is valid or not with a simple keyup event; true: invalid, false: valid
     if(!state){
       this.searchResult = (this.searchForm.value).searchBox;
       if(this.searchResult.length >=3){
-        this.value = this.countries.filter(item=>{
-          return (item.Country.toLowerCase()).includes(this.searchResult.toLowerCase()); //ARREGLAR EL TEMA DE LAS MAYUSCULAS
+        this.filteredCountries = this.countries.filter(item=>{
+          return (item.Country.toLowerCase()).includes(this.searchResult.toLowerCase()); //filter the array for get items which includes the search result
         });
       }
     }else{
-      this.filteredCountries = []
       this.searchResult = "";
     }
   }
-  cardOnClick():void{
-    this.filteredCountries = [];
+  cardOnClick(countrySelected:string):void{
+    if(this.countries.some(item=>(item.Country).toLowerCase() === countrySelected.toLowerCase())){ //some returns true if the country selected exists in the array
+      this.countrySelected.emit(countrySelected);
+    }else{
+      console.log(`${countrySelected} no existe men`)
+    }
     this.searchResult = "";
   }
   get f(){return this.searchForm.controls} //get all from controls with their properties

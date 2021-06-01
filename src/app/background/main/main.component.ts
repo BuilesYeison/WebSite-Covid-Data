@@ -8,8 +8,10 @@ import {GetApiDataService} from '../../get-api-data.service'
 })
 export class MainComponent implements OnInit {
   countries:any;
+  countrySelected:string="";
   constructor(private getCovidData:GetApiDataService) { }
 
+  getCountrySelected(data:string){this.countrySelected =data}
   ngOnInit(): void {
     this.getCovidData.getData().then(data=>{ //get data when the app is initialized and send it to serach component
       this.countries = data.Countries;

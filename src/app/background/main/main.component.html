@@ -3,5 +3,5 @@
         <h1>Hello!!👋</h1>
         <p>Let´s review the covid situation of any country</p>
     </div>
-    <app-searcher [countries]="countries"></app-searcher>
+    <app-searcher [countries]="countries" (countrySelected)="getCountrySelected($event)"></app-searcher>
 </main>
