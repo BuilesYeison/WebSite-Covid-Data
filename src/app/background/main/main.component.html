@@ -5,18 +5,18 @@
     </div>
     <app-searcher [countries]="countries" (countrySelected)="getCountrySelected($event)"></app-searcher>
     <div class="details-card">
-      <h1>United Stated of America</h1>
+      <h1>{{covidData.country}}</h1>
       <hr>
       <div class="detail-info confirmed">
         <h2>Confirmed</h2>
         <div class="container">
           <div class="content">
             <h3>New:</h3>
-            <p>154000</p>
+            <p>{{covidData.newConfirmed}}</p>
           </div>
           <div class="content">
             <h3>Total:</h3>
-            <p>154000</p>
+            <p>{{covidData.totalConfirmed}}</p>
           </div>
         </div>
       </div>
@@ -25,11 +25,11 @@
         <div class="container">
           <div class="content">
             <h3>New:</h3>
-            <p>154000</p>
+            <p>{{covidData.newDeaths}}</p>
           </div>
           <div class="content">
             <h3>Total:</h3>
-            <p>154000</p>
+            <p>{{covidData.totalDeaths}}</p>
           </div>
         </div>
       </div>
@@ -38,11 +38,11 @@
         <div class="container">
           <div class="content">
             <h3>New:</h3>
-            <p>154000</p>
+            <p>{{covidData.newRecovered}}</p>
           </div>
           <div class="content">
             <h3>Total:</h3>
-            <p>154000</p>
+            <p>{{covidData.totalRecovered}}</p>
           </div>
         </div>
       </div>
