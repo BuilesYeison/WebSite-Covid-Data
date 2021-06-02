@@ -12,4 +12,33 @@ main{
         h1{font-weight: 600;font-size: 24px;}
         p{font-weight: 400;font-size: 12px;}
     }
+    .details-card{
+      width: 90%;
+      height: 325px;
+      background-color: $cardColor;
+      margin: 0 auto;
+      border-radius: 24px;
+      padding: 20px;
+      color: $lightColor;
+      h1{
+        font-weight: 600;
+        font-size: 24px;
+      }
+      .detail-info{
+        width: 100%;
+        margin-top: 20px;
+        h2{font-size: 14px; font-weight: 600;}
+        h3{font-size: 14px;font-weight: 500;}
+        p{font-size: 18px;font-weight: 500;}
+        .container{
+          margin: 10px 0 0 15px;
+          width: 70%;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+      .confirmed{h2,h3{color: $confirmedTextColor};}
+      .deaths{h2,h3{color: $deathTextColor;}}
+      .recovered{h2,h3{color: $recoveredTextColor};}
+    }
 }

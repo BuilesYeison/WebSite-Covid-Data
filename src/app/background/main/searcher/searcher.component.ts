@@ -29,6 +29,7 @@ export class SearcherComponent implements OnInit {
     }
   }
   cardOnClick(countrySelected:string):void{
+    //get the countrySelected at key enter, clicking the search icon or selecting it in menu
     if(this.countries.some(item=>(item.Country).toLowerCase() === countrySelected.toLowerCase())){ //some returns true if the country selected exists in the array
       this.countrySelected.emit(countrySelected);
     }else{
