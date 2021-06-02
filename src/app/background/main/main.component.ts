@@ -37,19 +37,22 @@ export class MainComponent implements OnInit {
       }
     }
   }
+  showGlobalInfo():void{
+    this.covidData = {
+      country: "Global",
+      newConfirmed:this.globalCovidData.NewConfirmed,
+      totalConfirmed:this.globalCovidData.TotalConfirmed,
+      newDeaths:this.globalCovidData.NewDeaths,
+      totalDeaths:this.globalCovidData.TotalDeaths,
+      newRecovered:this.globalCovidData.NewRecovered,
+      totalRecovered:this.globalCovidData.TotalRecovered
+    };
+  }
   ngOnInit(): void {
     this.getCovidData.getData().then(data=>{
       this.countries = data.Countries;
       this.globalCovidData = data.Global;
-      this.covidData = {
-        country: "Global",
-        newConfirmed:this.globalCovidData.NewConfirmed,
-        totalConfirmed:this.globalCovidData.TotalConfirmed,
-        newDeaths:this.globalCovidData.NewDeaths,
-        totalDeaths:this.globalCovidData.TotalDeaths,
-        newRecovered:this.globalCovidData.NewRecovered,
-        totalRecovered:this.globalCovidData.TotalRecovered
-      };
+      this.showGlobalInfo();
     });//get data when the app is initialized and send it to search component
   }
 
